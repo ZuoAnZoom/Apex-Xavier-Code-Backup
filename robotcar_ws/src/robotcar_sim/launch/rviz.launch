@@ -1,0 +1,26 @@
+<launch>
+	<!-- 加载机器人模型文件  -->
+	<param name="robot_description" textfile="$(find robotcar_sim)/urdf/robotcar.urdf" />
+
+	<!-- 运行joint_state_publisher节点，发布机器人的关节状态  -->
+	<!--<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />-->
+	
+	<!-- 运行robot_state_publisher节点，发布tf  -->
+	<!--<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />-->
+
+	<!-- 设置地图的配置文件 -->
+	<arg name="map" default="smooth_curve.yaml" />
+
+	<!-- 运行地图服务器，并且加载设置的地图  -->
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find robotcar_map)/maps/pgm_maps/$(arg map)">
+		<remap from="/map" to="/static_map"/>
+	</node>
+
+	<!-- 设置/odom与/map之间的静态坐标变换，用于虚拟定位 -->
+	<node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 1.5707963 0 0 /map /odom 100" />
+
+	<!-- 运行rviz可视化界面 -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find robotcar_sim)/config/GUI_config.rviz" required="true" />
+</launch>
+
+

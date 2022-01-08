@@ -1,0 +1,5 @@
+<launch>
+
+    <rosparam file="$(find robotcar_controller)/config/controller_params.yaml" command="load" ns="controller" />
+
+</launch>

@@ -1,0 +1,99 @@
+%YAML:1.0
+
+# 输出路径
+result_dir: /home/lihua/catkin_ws/src/VSLAM/result
+
+# 实测数据
+# dataset_dir: /home/lihua/Document/实测数据集/201214小广场/association
+# dataset_dir: /home/lihua/Document/实测数据集/201223_VO/association
+# dataset_dir: /home/lihua/Document/实测数据集/标定/201215/association
+# camera_file: config/小车.yaml
+camera_file: config/robotcar_210103.yaml
+
+# 虚拟场景
+# dataset_dir: /home/lihua/Document/实测数据集/虚拟场景/association
+# camera_file: config/virtual.yaml
+
+# KITTI高速路段：大量重复文理以及有动态物体
+# dataset_dir: /home/lihua/Document/kitti_dataset/01/全程
+# camera_file: config/KITTI00-02.yaml
+
+# KITTI
+dataset_dir: /home/lihua/Document/kitti_dataset/00/回环
+# dataset_dir: /home/lihua/Document/kitti_dataset/00/转弯
+# dataset_dir: /home/lihua/Document/kitti_dataset/00/全程
+# dataset_dir: /home/lihua/Document/kitti_dataset/02/全程
+camera_file: config/KITTI00-02.yaml
+# camera_file: config/KITTI00-02_Mono.yaml
+
+# KITTI动态场景1
+# dataset_dir: /home/lihua/Document/kitti_dataset/03/动态场景
+# camera_file: config/KITTI03.yaml
+
+# KITTI动态场景2（解决漏检）
+# dataset_dir: /home/lihua/Document/kitti_dataset/04/动态场景
+# camera_file: config/KITTI04-12.yaml
+
+# KITTI动态场景3（常用）
+# dataset_dir: /home/lihua/Document/kitti_dataset/05/动态场景
+# camera_file: config/KITTI04-12.yaml
+
+# KITTI动态场景4
+# dataset_dir: /home/lihua/Document/kitti_dataset/07/动态场景
+# camera_file: config/KITTI04-12.yaml
+
+# KITTI动态场景5：有惯导数据
+# dataset_dir: /home/lihua/Document/kitti_dataset/动态场景5/association
+# camera_file: config/KITTI05.yaml
+
+# EuRoc
+# dataset_dir: /home/lihua/Document/euroc_dataset/euroc_MH_01_easy/data_part1
+# camera_file: config/EuRoc.yaml
+
+# TUM
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg1_desk/association
+# camera_file: config/TUM1.yaml
+
+# TUM：相机三轴平移（解决局部建图）
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg1_xyz/association
+# camera_file: config/TUM1.yaml
+
+# TUM：相机三轴纯旋转（精度很差）
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg1_rpy/association
+# camera_file: config/TUM1.yaml
+
+# TUM：平面场景
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_nostructure_texture_far/association
+# camera_file: config/TUM3.yaml
+
+# TUM：动态场景1
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_sitting_static/association
+# camera_file: config/TUM3.yaml
+
+# TUM：动态场景2
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_sitting_xyz/association
+# camera_file: config/TUM3.yaml
+
+# TUM：动态场景3
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_sitting_rpy/association
+# camera_file: config/TUM3.yaml
+
+# TUM：动态场景4
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_sitting_halfsphere/association
+# camera_file: config/TUM3.yaml
+
+# TUM：动态场景5
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_walking_static/association
+# camera_file: config/TUM3.yaml
+
+# TUM：动态场景6
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_walking_rpy/association
+# camera_file: config/TUM3.yaml
+
+# TUM：动态场景7
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_walking_xyz/association
+# camera_file: config/TUM3.yaml
+
+# TUM：动态场景8
+# dataset_dir: /home/lihua/Document/TUM_dataset/rgbd_dataset_freiburg3_walking_halfsphere/association
+# camera_file: config/TUM3.yaml

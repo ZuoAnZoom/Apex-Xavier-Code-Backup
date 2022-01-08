@@ -1,0 +1,26 @@
+2020-09-26T10:08:07.419284+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:07.422365+0800 INFO Image load complete, cost time: 0.00262s
+2020-09-26T10:08:13.026569+0800 INFO Single imgae inference cost time: 3.37603s
+2020-09-26T10:08:13.569866+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:13.571630+0800 INFO Image load complete, cost time: 0.00157s
+2020-09-26T10:08:14.564358+0800 INFO Single imgae inference cost time: 0.23029s
+2020-09-26T10:08:15.051217+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:15.053055+0800 INFO Image load complete, cost time: 0.00144s
+2020-09-26T10:08:15.991760+0800 INFO Single imgae inference cost time: 0.22727s
+2020-09-26T10:08:16.421400+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:16.423756+0800 INFO Image load complete, cost time: 0.00216s
+2020-09-26T10:08:17.369103+0800 INFO Single imgae inference cost time: 0.22333s
+2020-09-26T10:08:17.832571+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:17.834247+0800 INFO Image load complete, cost time: 0.00148s
+2020-09-26T10:08:18.877294+0800 INFO Single imgae inference cost time: 0.23192s
+2020-09-26T10:08:19.322241+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:19.324294+0800 INFO Image load complete, cost time: 0.00179s
+2020-09-26T10:08:20.342425+0800 INFO Single imgae inference cost time: 0.23867s
+2020-09-26T10:08:20.778318+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:20.780181+0800 INFO Image load complete, cost time: 0.00167s
+2020-09-26T10:08:21.812548+0800 INFO Single imgae inference cost time: 0.24227s
+2020-09-26T10:08:22.248020+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:22.249595+0800 INFO Image load complete, cost time: 0.00137s
+2020-09-26T10:08:23.314208+0800 INFO Single imgae inference cost time: 0.25519s
+2020-09-26T10:08:23.759488+0800 INFO Start reading image and preprocessing
+2020-09-26T10:08:23.761128+0800 INFO Image load complete, cost time: 0.00145s

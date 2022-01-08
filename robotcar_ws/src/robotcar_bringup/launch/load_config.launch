@@ -1,0 +1,5 @@
+<launch>
+
+    <rosparam file="$(find robotcar_bringup)/config/bringup_params.yaml" command="load" ns="bringup" />
+
+</launch>

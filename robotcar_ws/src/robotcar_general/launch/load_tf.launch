@@ -1,0 +1,10 @@
+<!-- 加载静态坐标转换 -->
+<launch>
+
+		<!-- 设置/odom与/map之间的静态坐标变换 -->
+		<node pkg="tf" type="static_transform_publisher" name="tf_broadcaster_odom_map" args="0 0 0 0 0 0 /odom /map 100" />
+
+		<!-- 设置/base_link与/left_camera之间的静态坐标变换 -->
+		<node pkg="tf" type="static_transform_publisher" name="tf_broadcaster_base_link_left_camera" args="1.057 0.2 1.030 0 0 0 /base_link /left_camera 100" />
+
+</launch>

@@ -1,0 +1,32 @@
+%YAML:1.0
+#KITTI00-02
+
+# 相机类型
+# 单目1，RGBD2，双目3
+Camera.type: 3
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 1312.961
+Camera.fy: 1312.961
+Camera.cx: 640
+Camera.cy: 360
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+
+Camera.width: 1280
+Camera.height: 720
+
+# Camera frames per second 
+Camera.fps: 30.0
+
+# stereo baseline times fx
+Camera.bf: 131.2961
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 35

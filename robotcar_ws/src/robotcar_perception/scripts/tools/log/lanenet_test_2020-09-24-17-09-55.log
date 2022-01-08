@@ -1,0 +1,14 @@
+2020-09-24T17:09:58.704352+0800 INFO Mean inference time every single image: 1.55519s
+2020-09-24T17:10:00.289557+0800 INFO Mean inference time every single image: 0.14578s
+2020-09-24T17:10:01.872835+0800 INFO Mean inference time every single image: 0.14622s
+2020-09-24T17:10:03.519421+0800 INFO Mean inference time every single image: 0.15199s
+2020-09-24T17:10:05.107981+0800 INFO Mean inference time every single image: 0.14649s
+2020-09-24T17:10:06.794225+0800 INFO Mean inference time every single image: 0.15119s
+2020-09-24T17:10:08.442603+0800 INFO Mean inference time every single image: 0.15306s
+2020-09-24T17:10:10.119141+0800 INFO Mean inference time every single image: 0.15454s
+2020-09-24T17:10:11.775578+0800 INFO Mean inference time every single image: 0.15238s
+2020-09-24T17:10:13.395566+0800 INFO Mean inference time every single image: 0.15035s
+2020-09-24T17:10:14.670201+0800 INFO Mean inference time every single image: 0.11603s
+2020-09-24T17:10:15.985935+0800 INFO Mean inference time every single image: 0.11813s
+2020-09-24T17:10:17.349546+0800 INFO Mean inference time every single image: 0.12539s
+2020-09-24T17:10:19.022190+0800 INFO Mean inference time every single image: 0.15381s

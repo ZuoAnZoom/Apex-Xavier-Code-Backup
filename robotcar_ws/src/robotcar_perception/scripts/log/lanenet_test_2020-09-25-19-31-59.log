@@ -1,0 +1,21 @@
+2020-09-25T19:31:59.517891+0800 INFO Start reading image and preprocessing
+2020-09-25T19:31:59.520624+0800 INFO Image load complete, cost time: 0.00243s
+2020-09-25T19:32:03.230867+0800 INFO Single imgae inference cost time: 1.41502s
+2020-09-25T19:32:03.495352+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:03.497116+0800 INFO Image load complete, cost time: 0.00155s
+2020-09-25T19:32:03.738840+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:03.741215+0800 INFO Image load complete, cost time: 0.00218s
+2020-09-25T19:32:04.001132+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:04.002894+0800 INFO Image load complete, cost time: 0.00155s
+2020-09-25T19:32:04.273606+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:04.275360+0800 INFO Image load complete, cost time: 0.00155s
+2020-09-25T19:32:04.520991+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:04.522986+0800 INFO Image load complete, cost time: 0.00178s
+2020-09-25T19:32:04.771345+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:04.773531+0800 INFO Image load complete, cost time: 0.00199s
+2020-09-25T19:32:05.026040+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:05.028326+0800 INFO Image load complete, cost time: 0.00208s
+2020-09-25T19:32:05.314687+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:05.316576+0800 INFO Image load complete, cost time: 0.00169s
+2020-09-25T19:32:05.558247+0800 INFO Start reading image and preprocessing
+2020-09-25T19:32:05.560005+0800 INFO Image load complete, cost time: 0.00156s

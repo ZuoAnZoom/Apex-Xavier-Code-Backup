@@ -1,0 +1,16 @@
+string header
+string gpsTime
+string status
+string lat
+string nsIndicator
+string lon
+string ewIndicator
+string spd
+string cog
+string date
+string mv
+string mvEW
+string poseMode
+string navStatus
+string checksum
+string CrLf

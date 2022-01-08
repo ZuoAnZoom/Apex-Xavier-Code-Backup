@@ -1,0 +1,31 @@
+2020-09-25T19:45:06.173808+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:06.176618+0800 INFO Image load complete, cost time: 0.00250s
+2020-09-25T19:45:09.924878+0800 INFO Single imgae inference cost time: 1.46449s
+2020-09-25T19:45:25.160191+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:25.162059+0800 INFO Image load complete, cost time: 0.00165s
+2020-09-25T19:45:25.419792+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:25.421632+0800 INFO Image load complete, cost time: 0.00163s
+2020-09-25T19:45:25.680788+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:25.682621+0800 INFO Image load complete, cost time: 0.00154s
+2020-09-25T19:45:26.012274+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:26.013987+0800 INFO Image load complete, cost time: 0.00152s
+2020-09-25T19:45:26.250769+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:26.252781+0800 INFO Image load complete, cost time: 0.00181s
+2020-09-25T19:45:26.488451+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:26.490469+0800 INFO Image load complete, cost time: 0.00181s
+2020-09-25T19:45:26.727206+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:26.728995+0800 INFO Image load complete, cost time: 0.00159s
+2020-09-25T19:45:27.005685+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:27.007353+0800 INFO Image load complete, cost time: 0.00147s
+2020-09-25T19:45:27.247239+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:27.249586+0800 INFO Image load complete, cost time: 0.00214s
+2020-09-25T19:45:27.494796+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:27.497155+0800 INFO Image load complete, cost time: 0.00215s
+2020-09-25T19:45:27.746199+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:27.748144+0800 INFO Image load complete, cost time: 0.00174s
+2020-09-25T19:45:27.986610+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:27.989029+0800 INFO Image load complete, cost time: 0.00202s
+2020-09-25T19:45:28.273942+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:28.275698+0800 INFO Image load complete, cost time: 0.00156s
+2020-09-25T19:45:28.520317+0800 INFO Start reading image and preprocessing
+2020-09-25T19:45:28.522920+0800 INFO Image load complete, cost time: 0.00238s

@@ -1,0 +1,98 @@
+%YAML:1.0
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+#    FEATURES = 1,
+#    DIRECT = 2,
+#前后帧位姿估计的方式
+Odometry.LastCurrMethod: 1
+
+Odometry.MaxNumLost: 10
+
+DirectTracker.pyramids: 6
+
+DirectTracker.pyramid_scale: 0.5
+
+DirectTracker.half_patch_size: 1
+
+Mapping.LocalMapSize: 10
+
+# NONE = 0,
+# YOLOv3 = 1,
+# MASKRCNN = 2,
+# SOLO = 3
+# 神经网络类型
+System.ModelType: 0
+
+# 网络配置文件
+Detector.cfgfile: src/VSLAM/config/NetWork/Yolo/cfg/yolov3.cfg
+# Detector.cfgfile: config/NetWork/Yolo/cfg/yolov3.cfg
+
+# 网络权重文件
+Detector.weightfile: src/VSLAM/config/NetWork/Yolo/weights/yolov3.weights
+# Detector.weightfile: config/NetWork/Yolo/weights/yolov3.weights
+
+# 目标标签文件
+Detector.namesfile: src/VSLAM/config/NetWork/Yolo/coco.names
+# Detector.namesfile: config/NetWork/Yolo/coco.names
+
+Detector.thresh: 0.5
+
+Detector.nms_thresh: 0.4
+
+Detector.inp_width: 416
+
+Detector.inp_height: 416
+
+# 网络配置文件
+# Segment.cfgfile: src/VSLAM/config/NetWork/MaskRCNN/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt
+Segment.cfgfile: config/NetWork/MaskRCNN/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt
+
+# 网络权重文件
+# Segment.weightfile: src/VSLAM/config/NetWork/MaskRCNN/frozen_inference_graph.pb
+Segment.weightfile: config/NetWork/MaskRCNN/frozen_inference_graph.pb
+
+# 目标标签文件
+# Segment.namesfile: src/VSLAM/config/NetWork/MaskRCNN/coco.names
+Segment.namesfile: config/NetWork/MaskRCNN/coco.names
+
+Segment.thresh: 0.6
+
+Segment.nms_thresh: 0.4
+
+Segment.mask_thresh: 0.3
+
+Classifier.min_area_ratio: 0.2
+
+Classifier.numpts_area_ratio: 0.0003
+
+Classifier.halfpatch_size: 3
+
+Classifier.dyna_patch_ncc: 0.8
+
+Classifier.dyna_patch_std: 0.04
+
+Classifier.dyna_pos_change: 30.0
+
+Classifier.keeppts_ratio: 0.8
+
+Classifier.match_IOU: 0.4
+
+# 是否画图（用于调试）
+Classifier.drawMatchObject: 0
+Classifier.drawlocateObject: 0
+Classifier.drawMissdDetect: 0
+Classifier.drawGeometry: 0
+Classifier.drawAppearance: 0
+Classifier.drawPosition: 0

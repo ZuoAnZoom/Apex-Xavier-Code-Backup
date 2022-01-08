@@ -1,0 +1,27 @@
+2020-09-26T16:02:09.910922+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:09.922145+0800 INFO Image load complete, cost time: 0.01089s
+2020-09-26T16:02:13.914934+0800 INFO Single imgae inference cost time: 1.57958s
+2020-09-26T16:02:14.320809+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:14.322697+0800 INFO Image load complete, cost time: 0.00145s
+2020-09-26T16:02:15.180281+0800 INFO Single imgae inference cost time: 0.18685s
+2020-09-26T16:02:15.548631+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:15.550390+0800 INFO Image load complete, cost time: 0.00145s
+2020-09-26T16:02:16.483520+0800 INFO Single imgae inference cost time: 0.19169s
+2020-09-26T16:02:16.863493+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:16.865153+0800 INFO Image load complete, cost time: 0.00145s
+2020-09-26T16:02:17.788612+0800 INFO Single imgae inference cost time: 0.20758s
+2020-09-26T16:02:18.155088+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:18.156964+0800 INFO Image load complete, cost time: 0.00168s
+2020-09-26T16:02:19.085611+0800 INFO Single imgae inference cost time: 0.20341s
+2020-09-26T16:02:19.459066+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:19.461092+0800 INFO Image load complete, cost time: 0.00182s
+2020-09-26T16:02:20.431980+0800 INFO Single imgae inference cost time: 0.21319s
+2020-09-26T16:02:20.809462+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:20.811141+0800 INFO Image load complete, cost time: 0.00145s
+2020-09-26T16:02:21.864442+0800 INFO Single imgae inference cost time: 0.21330s
+2020-09-26T16:02:22.237695+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:22.239483+0800 INFO Image load complete, cost time: 0.00158s
+2020-09-26T16:02:23.233452+0800 INFO Single imgae inference cost time: 0.22279s
+2020-09-26T16:02:23.609834+0800 INFO Start reading image and preprocessing
+2020-09-26T16:02:23.611597+0800 INFO Image load complete, cost time: 0.00156s
+2020-09-26T16:02:24.654813+0800 INFO Single imgae inference cost time: 0.22534s

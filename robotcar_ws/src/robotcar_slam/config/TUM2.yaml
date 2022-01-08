@@ -1,0 +1,40 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+# 相机类型
+# 单目1，RGBD2，双目3
+Camera.type: 2
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 520.908620
+Camera.fy: 521.007327
+Camera.cx: 325.141442
+Camera.cy: 249.701764
+
+Camera.k1: 0.231222
+Camera.k2: -0.784899
+Camera.p1: -0.003257
+Camera.p2: -0.000105
+Camera.k3: 0.917205
+
+Camera.width: 640
+Camera.height: 480
+
+# Camera frames per second 
+Camera.fps: 30.0
+
+# IR projector baseline times fx (aprox.)
+Camera.bf: 40.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 40.0
+
+# Deptmap values factor 
+Camera.depth_factor: 5208.0
+
+

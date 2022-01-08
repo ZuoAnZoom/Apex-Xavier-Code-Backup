@@ -1,0 +1,6 @@
+ <launch>
+      <node pkg="rosbag" type="play" name="rosbag" args="-d 2 /home/h/2020-12-28-13-22-13.bag"/>
+      <node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="ROS_HOME">
+        <remap from="image" to="/left_camera/image_raw"/>
+      </node>
+ </launch>

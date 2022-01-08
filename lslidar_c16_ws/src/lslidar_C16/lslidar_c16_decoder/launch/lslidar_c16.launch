@@ -1,0 +1,34 @@
+<launch>
+
+  <arg name="ls_frame_id" default="laser"/>
+  <arg name="ls_distance_unit" default="0.25"/>
+  <arg name="ls_use_gps_ts" default="false"/>
+
+  <node pkg="lslidar_c16_driver" type="lslidar_c16_driver_node" name="lslidar_c16_driver_node" output="screen">
+    <param name="lidar_ip" value="192.168.1.200"/>
+    <param name="device_port" value="2368"/>
+	  <param name="add_multicast" value="false"/>
+  	<param name="group_ip" value="224.1.1.2"/>
+  </node>
+
+  <node pkg="lslidar_c16_decoder" type="lslidar_c16_decoder_node" name="lslidar_c16_decoder_node" output="screen">
+    <param name="frame_id" type="string" value="$(arg ls_frame_id)"/>
+    <param name="point_num" value="2000"/>
+    <param name="channel_num" value="0"/>
+    <param name="angle_disable_min" value="0"/>
+    <param name="angle_disable_max" value="0"/>
+    <param name="angle3_disable_min" value="0"/>
+    <param name="angle3_disable_max" value="0"/>
+    <param name="min_range" value="0.15"/>
+    <param name="max_range" value="150.0"/>
+    <param name="frequency" value="10.0"/>
+    <param name="publish_point_cloud" value="true"/>
+    <param name="publish_scan" value="true"/>
+    <param name="distance_unit" type="double" value="$(arg ls_distance_unit)"/>
+    <param name="use_gps_ts" type="bool" value="$(arg ls_use_gps_ts)"/>
+  </node>
+  
+
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find lslidar_c16_decoder)/launch/lslidar_c16.rviz" output="screen"/-->
+
+</launch>

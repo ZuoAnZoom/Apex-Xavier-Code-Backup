@@ -1,0 +1,20 @@
+<!-- 加载全工作空间的参数 -->
+<launch>
+
+    <!-- 全局参数 -->
+    <rosparam file="$(find robotcar_general)/config/robotcar_params.yaml" command="load"/>
+
+    <!-- 实车CAN总线通讯与PID控制参数 -->
+    <rosparam file="$(find robotcar_bringup)/config/bringup_params.yaml" command="load" ns="bringup" />
+
+    <!-- 地图管理器参数 -->
+    <rosparam file="$(find robotcar_map)/config/static_map_params.yaml" command="load" ns="static_map" />
+    <rosparam file="$(find robotcar_map)/config/semantic_map_params.yaml" command="load" ns="semantic_map" />
+    <rosparam file="$(find robotcar_map)/config/inflation_map_params.yaml" command="load" ns="inflation_map" />
+
+    <!-- 运动规划器参数 -->
+    <rosparam file="$(find robotcar_motion_planner)/config/motion_planner_params.yaml" command="load" ns="motion_planner" />
+
+    <!-- 运动控制器参数 -->
+    <rosparam file="$(find robotcar_controller)/config/controller_params.yaml" command="load" ns="controller" />
+</launch>

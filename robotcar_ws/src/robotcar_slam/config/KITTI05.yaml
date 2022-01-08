@@ -1,0 +1,44 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# 相机类型
+# 单目1，RGBD2，双目3
+Camera.type: 3
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 7.215377e+02
+Camera.fy: 7.215377e+02
+Camera.cx: 6.095593e+02
+Camera.cy: 1.728540e+02
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+
+Camera.width: 1242
+Camera.height: 375
+
+# Camera frames per second 
+Camera.fps: 10.0
+
+# stereo baseline times fx
+Camera.bf: 3.875744e+02 
+
+# Close/Far threshold. Baseline times.
+ThDepth: 40
+
+#--------------------------------------------------------------------------------------------
+# Sensor extrinsics wrt. the body-frame.
+#--------------------------------------------------------------------------------------------
+Left_T_BS: !!opencv-matrix
+  cols: 4
+  rows: 4
+  dt: d
+  data: [0.00831786, 0.0127777, 0.999884, 1.0833,
+         -0.999865, -0.0140837, 0.00849768, -0.309889,
+         0.0141907, -0.999819, 0.0126588, 0.72992,
+         0.0, 0.0, 0.0,  1.0]

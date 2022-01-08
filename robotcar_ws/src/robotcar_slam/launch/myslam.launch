@@ -1,0 +1,4 @@
+<launch>
+	<node name="solo" pkg="solo" type="inference_demo.py" />
+	<node name="myslam" pkg="myslam" type="run_myslam" />
+</launch>

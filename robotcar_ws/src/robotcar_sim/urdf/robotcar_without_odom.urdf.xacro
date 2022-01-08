@@ -1,0 +1,920 @@
+<?xml version="1.0" ?>
+<robot name="robotcar" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="sphere_inertial_matrix" params="m r">
+        <inertial>
+            <mass value="${m}" />
+            <inertia ixx="${2*m*r*r/5}" ixy="0" ixz="0"
+                iyy="${2*m*r*r/5}" iyz="0" 
+                izz="${2*m*r*r/5}" />
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="cylinder_inertial_matrix" params="m r h">
+        <inertial>
+            <mass value="${m}" />
+            <inertia ixx="${m*(3*r*r+h*h)/12}" ixy = "0" ixz = "0"
+                iyy="${m*(3*r*r+h*h)/12}" iyz = "0"
+                izz="${m*r*r/2}" /> 
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="box_inertial_matrix" params="m w h d">
+        <inertial>
+            <mass value="${m}" />
+            <inertia ixx="${m*(h*h+d*d)/12}" ixy = "0" ixz = "0"
+                iyy="${m*(w*w+d*d)/12}" iyz = "0"
+                izz="${m*(w*w+h*h)/12}" /> 
+        </inertial>
+    </xacro:macro>
+
+
+    <link name="base_link">
+        <box_inertial_matrix  m="0.1" w="0.76" h="0.22" d="0.87" /> 
+        <visual>
+            <origin xyz="0 0 0.42" rpy="0 0 0" />
+            <geometry>
+                <box size="0.87 0.76 0.22"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.42" rpy="0 0 0" />
+            <geometry>
+                <box size="0.87 0.76 0.22"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <!-- <joint name="base_visual_box" type="continuous">
+        <origin xyz="20 0 0" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="visual_box" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="visual_box">
+        <box_inertial_matrix  m="0.1" w="0.76" h="0.22" d="0.87" /> 
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="3 3 3"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+        </collision>
+    </link> 
+
+    <gazebo reference="visual_box">
+        <material>Gazebo/Black</material>
+    </gazebo> -->
+
+    <joint name="base_leftfront_motor_joint" type="continuous">
+        <origin xyz="0.51 0.455 0.22" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="leftfront_motor" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <transmission name="leftfront_motor_joint_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base_leftfront_motor_joint"/>
+        <actuator name="leftfront_motor_joint_motor">
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name="leftfront_motor">
+        <cylinder_inertial_matrix  m="2" r="0.22" h="0.15" />
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.15 0.15 0.15 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+        </collision>
+    </link> 
+
+    <gazebo reference="leftfront_motor">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <joint name="base_leftback_motor_joint" type="continuous">
+        <origin xyz="-0.51 0.455 0.22" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="leftback_motor" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="leftback_motor">
+        <cylinder_inertial_matrix  m="0.2" r="0.22" h="0.15" />
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.15 0.15 0.15 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+        </collision>
+    </link> 
+
+    <gazebo reference="leftback_motor">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <joint name="base_rightfront_motor_joint" type="continuous">
+        <origin xyz="0.51 -0.455 0.22" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="rightfront_motor" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <transmission name="rightfront_motor_joint_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base_rightfront_motor_joint"/>
+        <actuator name="rightfront_motor_joint_motor">
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name="rightfront_motor">
+        <cylinder_inertial_matrix  m="2" r="0.22" h="0.15" />
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.15 0.15 0.15 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="rightfront_motor">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <joint name="base_rightback_motor_joint" type="continuous">
+        <origin xyz="-0.51 -0.455 0.22" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="rightback_motor" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="rightback_motor">
+        <cylinder_inertial_matrix  m="0.2" r="0.22" h="0.15" />
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.15 0.15 0.15 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="rightback_motor">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <joint name="base_board" type="fixed">
+        <origin xyz="0 0 0.545" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="board" />
+    </joint>
+
+    <link name="board">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.54 0.86 0.03"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.54 0.86 0.03"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="board">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <joint name="board_bar_leftfront" type="fixed">
+        <origin xyz="0.755 0.415 0.11" rpy="0 0 0" />        
+        <parent link="board"/>
+        <child link="bar_leftfront" />
+    </joint>
+
+    <link name="bar_leftfront">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_leftfront">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="board_bar_leftback" type="fixed">
+        <origin xyz="-0.755 0.415 0.11" rpy="0 0 0" />        
+        <parent link="board"/>
+        <child link="bar_leftback" />
+    </joint>
+
+    <link name="bar_leftback">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_leftback">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="board_bar_rightfront" type="fixed">
+        <origin xyz="0.755 -0.415 0.11" rpy="0 0 0" />        
+        <parent link="board"/>
+        <child link="bar_rightfront" />
+    </joint>
+
+    <link name="bar_rightfront">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_rightfront">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="board_bar_rightback" type="fixed">
+        <origin xyz="-0.755 -0.415 0.11" rpy="0 0 0" />        
+        <parent link="board"/>
+        <child link="bar_rightback" />
+    </joint>
+
+    <link name="bar_rightback">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_rightback">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="bar_leftfront_bar_leftfront_tilt" type="fixed">
+        <origin xyz="-0.111 0 0.309" rpy="0 -0.5 0" />        
+        <parent link="bar_leftfront"/>
+        <child link="bar_leftfront_tilt" />
+    </joint>
+
+    <link name="bar_leftfront_tilt">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_leftfront_tilt">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+
+    <joint name="bar_leftfront_tilt_camerabar" type="fixed">
+        <origin xyz="0 -0.41 0" rpy="0 0 0" />        
+        <parent link="bar_leftfront_tilt"/>
+        <child link="camerabar" />
+    </joint>
+
+    <link name="camerabar">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.83 0.03"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+
+    <joint name="bar_front_high_left_camera" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+        <parent link="bar_front_high"/>
+        <child link="left_camera" />
+    </joint>
+
+    <link name="left_camera">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.07 0.07 0.07"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="left_camera">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+
+    <joint name="bar_front_high_right_camera" type="fixed">
+        <origin xyz="0 0 0.1" rpy="-1.5708 0 0" />
+        <parent link="bar_front_high"/>
+        <child link="right_camera" />
+    </joint>
+
+    <link name="right_camera">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.07 0.07 0.07"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="right_camera">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+
+
+    <joint name="bar_leftback_bar_leftback_tilt" type="fixed">
+        <origin xyz="0.111 0 0.309" rpy="0 0.5 0" />        
+        <parent link="bar_leftback"/>
+        <child link="bar_leftback_tilt" />
+    </joint>
+
+    <link name="bar_leftback_tilt">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_leftback_tilt">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="bar_rightfront_bar_rightfront_tilt" type="fixed">
+        <origin xyz="-0.111 0 0.309" rpy="0 -0.5 0" />        
+        <parent link="bar_rightfront"/>
+        <child link="bar_rightfront_tilt" />
+    </joint>
+
+    <link name="bar_rightfront_tilt">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_rightfront_tilt">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="bar_rightback_bar_rightback_tilt" type="fixed">
+        <origin xyz="0.111 0 0.309" rpy="0 0.5 0" />        
+        <parent link="bar_rightback"/>
+        <child link="bar_rightback_tilt" />
+    </joint>
+
+    <link name="bar_rightback_tilt">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_rightback_tilt">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="bar_leftfront_bar_front" type="fixed">
+        <origin xyz="0 -0.42 0.11" rpy="1.5708 0 0" />        
+        <parent link="bar_leftfront"/>
+        <child link="bar_front" />
+    </joint>
+
+    <link name="bar_front">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_front">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="camerabar_laser" type="fixed">
+        <origin xyz="0 0 0.04" rpy="0 0.5 0" />        
+        <parent link="camerabar"/>
+        <child link="laser" />
+    </joint>
+
+    <link name="laser">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.035"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.035"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="laser">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <joint name="bar_leftfront_bar_front_high" type="fixed">
+        <origin xyz="-0.225 -0.42 0.51" rpy="1.5708 0 0" />        
+        <parent link="bar_leftfront"/>
+        <child link="bar_front_high" />
+    </joint>
+
+    <link name="bar_front_high">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_front_high">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="bar_leftback_bar_back" type="fixed">
+        <origin xyz="0 -0.42 0.11" rpy="1.5708 0 0" />        
+        <parent link="bar_leftback"/>
+        <child link="bar_back" />
+    </joint>
+
+    <link name="bar_back">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_back">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="bar_leftback_bar_back_high" type="fixed">
+        <origin xyz="0.225 -0.415 0.51" rpy="1.5708 0 0" />        
+        <parent link="bar_leftback"/>
+        <child link="bar_back_high" />
+    </joint>
+
+    <link name="bar_back_high">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.86"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.86"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_back_high">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="bar_front_high_bar_top_left" type="fixed">
+        <origin xyz="-0.52 0 0.4095" rpy="0 0 0" />        
+        <parent link="bar_front_high"/>
+        <child link="bar_top_left" />
+    </joint>
+
+    <link name="bar_top_left">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.06 0.03 0.03"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.06 0.03 0.03"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_top_left">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <joint name="bar_front_high_bar_top_right" type="fixed">
+        <origin xyz="-0.52 0 -0.42" rpy="0 0 0" />        
+        <parent link="bar_front_high"/>
+        <child link="bar_top_right" />
+    </joint>
+
+    <link name="bar_top_right">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.071 0.03 0.03"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.071 0.03 0.03"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <gazebo reference="bar_top_right">
+        <material>
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+    </gazebo>
+
+    <!-- controller -->
+    <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <rosDebugLevel>Debug</rosDebugLevel>
+        <publishWheelTF>true</publishWheelTF>
+        <robotNamespace>/</robotNamespace>
+        <publishTf>1</publishTf>
+        <publishWheelJointState>true</publishWheelJointState>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100.0</updateRate>
+        <legacyMode>true</legacyMode>
+        <leftJoint>base_leftfront_motor_joint</leftJoint>
+        <rightJoint>base_rightfront_motor_joint</rightJoint>
+        <wheelSeparation>0.91</wheelSeparation>
+        <wheelDiameter>0.44</wheelDiameter>
+        <broadcastTF>true</broadcastTF>
+        <wheelTorque>30</wheelTorque>
+        <wheelAcceleration>1.8</wheelAcceleration>
+        <commandTopic>cmd_vel</commandTopic>
+        <publishOdomTF>false</publishOdomTF>
+        <odometryFrame>odom</odometryFrame>
+        <odometryTopic>odom</odometryTopic>
+        <robotBaseFrame>base_link</robotBaseFrame>
+        </plugin>
+    </gazebo>
+
+
+    <gazebo reference="left_camera">
+        <sensor type="camera" name="left_camera_node">
+            <update_rate>30.0</update_rate>
+            <camera name="left_camera">
+                <horizontal_fov>0.90711111</horizontal_fov>
+                <image>
+                    <width>1280</width>
+                    <height>720</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+            <plugin name="gazebo_camera" filename="libgazebo_ros_camera.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>0.0</updateRate>
+                <cameraName>/left_camera</cameraName>
+                <imageTopicName>image_raw</imageTopicName>
+                <cameraInfoTopicName>left_camera_info</cameraInfoTopicName>
+                <frameName>left_camera</frameName>
+                <hackBaseline>0.07</hackBaseline>
+                <distortionK1>0.0</distortionK1>
+                <distortionK2>0.0</distortionK2>
+                <distortionK3>0.0</distortionK3>
+                <distortionT1>0.0</distortionT1>
+                <distortionT2>0.0</distortionT2>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="right_camera">
+        <sensor type="camera" name="left_camera_node">
+            <update_rate>30.0</update_rate>
+            <camera name="right_camera">
+                <horizontal_fov>0.90711111</horizontal_fov>
+                <image>
+                    <width>1280</width>
+                    <height>720</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+            <plugin name="gazebo_camera" filename="libgazebo_ros_camera.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>0.0</updateRate>
+                <cameraName>/right_camera</cameraName>
+                <imageTopicName>image_raw</imageTopicName>
+                <cameraInfoTopicName>right_camera_info</cameraInfoTopicName>
+                <frameName>right_camera</frameName>
+                <hackBaseline>0.07</hackBaseline>
+                <distortionK1>0.0</distortionK1>
+                <distortionK2>0.0</distortionK2>
+                <distortionK3>0.0</distortionK3>
+                <distortionT1>0.0</distortionT1>
+                <distortionT2>0.0</distortionT2>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="laser">
+        <sensor type="ray" name="laser">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>false</visualize>
+            <update_rate>5.5</update_rate>
+            <ray>
+                <scan>
+                  <horizontal>
+                    <samples>3000</samples>
+                    <resolution>1</resolution>
+                    <min_angle>-3.14</min_angle>
+                    <max_angle>3.14</max_angle>
+                  </horizontal>
+                </scan>
+                <range>
+                  <min>0.10</min>
+                  <max>30.0</max>
+                  <resolution>1</resolution>
+                </range>
+                <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="gazebo_laser" filename="libgazebo_ros_laser.so">
+                <topicName>/scan</topicName>
+                <frameName>laser</frameName>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>

@@ -1,0 +1,7 @@
+pid_enable: 0
+kp: 1.8
+ki: 0.001
+kd: 10.0
+descend_rate: 0.8
+write_fq: 2
+max_throttle: 18

@@ -1,0 +1,5 @@
+2020-10-04T11:10:08.238844+0800 INFO Mean inference time every single image: 1.67740s
+2020-10-04T11:10:10.694695+0800 INFO Mean inference time every single image: 0.23411s
+2020-10-04T11:10:13.191762+0800 INFO Mean inference time every single image: 0.23564s
+2020-10-04T11:10:15.732382+0800 INFO Mean inference time every single image: 0.23991s
+2020-10-04T11:10:18.166779+0800 INFO Mean inference time every single image: 0.23033s

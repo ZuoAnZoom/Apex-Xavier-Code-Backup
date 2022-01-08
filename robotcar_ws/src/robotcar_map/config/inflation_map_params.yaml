@@ -1,0 +1,7 @@
+inflation_radius: 0.5
+inflation_bound: 30.0
+inflation_decay: 0.3
+
+# inflation_radius: 1.5
+# inflation_bound: 60.0
+# inflation_decay: 0.23

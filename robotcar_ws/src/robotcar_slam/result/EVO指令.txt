@@ -1,0 +1,22 @@
+绘制轨迹：
+evo_traj tum esti_result.txt  --ref=truth_result.txt --sync -p --save_plot ./evo_traj --plot_mode=xyz
+
+
+绝对位姿误差及结果分析：
+#轨迹部分
+evo_ape tum truth_result.txt esti_result.txt -r trans_part -v -p --plot_mode xyz --save_plot evo_ape  --save_results ./euroc_ape.zip
+#姿态部分
+evo_ape tum truth_result.txt esti_result.txt -r angle_deg -v -p --plot_mode xyz --save_plot evo_ape  --save_results ./euroc_ape.zip
+
+evo_res euroc_ape.zip  -p --save_plot evo_res_ape --save_table ape_table.csv
+
+
+相对位姿误差及结果分析：
+#轨迹部分
+evo_rpe tum truth_result.txt esti_result.txt -r trans_part -v -p --plot_mode xyz --save_plot evo_rpe  --save_results ./euroc_rpe.zip
+evo_rpe tum truth_result.txt esti_result.txt -r trans_part -d 100 -u m --all_pairs -v  --save_results ./euroc_rpe.zip # 间隔100m
+#姿态部分
+evo_rpe tum truth_result.txt esti_result.txt -r angle_part -v -p --plot_mode xyz --save_plot evo_rpe  --save_results ./euroc_rpe.zip
+
+evo_res euroc_rpe.zip  -p --save_plot evo_res_rpe --save_table rpe_table.csv
+

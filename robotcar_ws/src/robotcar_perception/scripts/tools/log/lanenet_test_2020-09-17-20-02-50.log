@@ -1,0 +1,3 @@
+2020-09-17T20:02:50.208512+0800 INFO Start reading image and preprocessing
+2020-09-17T20:02:50.221305+0800 INFO Image load complete, cost time: 0.01231s
+2020-09-17T20:03:00.131331+0800 INFO Single imgae inference cost time: 1.48780s

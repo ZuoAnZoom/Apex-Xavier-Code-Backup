@@ -1,0 +1,11 @@
+<launch>
+    <!-- 启动Rviz可视化 -->
+    <include file="$(find robotcar_sim)/launch/rviz_empty.launch"/>
+
+    <!-- 启动运动控制器 -->
+    <node name="robotcar_controller" pkg="robotcar_controller" type="controller"/>
+
+    <!-- 启动车辆通讯 -->
+    <node name="robotcar_bringup" pkg="robotcar_bringup" type="bringup"/>
+
+</launch>

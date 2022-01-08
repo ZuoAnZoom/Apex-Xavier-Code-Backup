@@ -1,0 +1,12 @@
+# 传感器/检测算法是否开启，0：关闭/1：开启
+lidar_enable: 0
+lane_perception_enable: 1
+obstacle_perception_enable: 1
+
+lidar_topic: /scan
+lidar_frame: laser
+min_obstacle_height: 0.0
+max_obstacle_height: 5.0
+max_obstacle_distance: 50.0
+fliter_length: 2.0
+fliter_width: 1.4

@@ -1,0 +1,20 @@
+<launch>
+    <!-- 打开摄像头 -->
+    <include file="$(find miivii_gmsl_ros)/launch/1_node_with_4_cameras.launch"/>
+
+    <!-- 加载参数 -->
+    <include file="$(find robotcar_general)/launch/load_config.launch"/>
+
+    <!-- 发布odom与map间静态坐标转换 -->
+    <include file="$(find robotcar_general)/launch/load_tf.launch"/>
+
+    <!-- 启动Slam -->
+    <node name="robotcar_slam" pkg="robotcar_slam" type="slam"/>
+
+    <!-- 启动障碍物感知 -->
+    <node name="robotcar_obstacle_detection" pkg="robotcar_perception" type="obstacle_detection"/>
+
+    <!-- 启动车道线感知 -->
+    <node name="robotcar_lane_detection" pkg="robotcar_perception" type="lane_detection.py"/>
+
+</launch>

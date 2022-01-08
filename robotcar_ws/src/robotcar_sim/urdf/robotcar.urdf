@@ -1,0 +1,559 @@
+<?xml version="1.0" ?>
+<robot name="robotcar">
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0.42" rpy="0 0 0" />
+            <geometry>
+                <box size="0.87 0.76 0.22"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.42" rpy="0 0 0" />
+            <geometry>
+                <box size="0.87 0.76 0.22"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="base_leftfront_motor_joint" type="continuous">
+        <origin xyz="0.51 0.455 0.22" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="leftfront_motor" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="leftfront_motor">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.15 0.15 0.15 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+        </collision>
+    </link> 
+
+    <joint name="base_leftback_motor_joint" type="continuous">
+        <origin xyz="-0.51 0.455 0.22" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="leftback_motor" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="leftback_motor">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.15 0.15 0.15 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+        </collision>
+    </link> 
+
+    <joint name="base_rightfront_motor_joint" type="continuous">
+        <origin xyz="0.51 -0.455 0.22" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="rightfront_motor" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="rightfront_motor">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.15 0.15 0.15 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="base_rightback_motor_joint" type="continuous">
+        <origin xyz="-0.51 -0.455 0.22" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="rightback_motor" />
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="rightback_motor">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.15 0.15 0.15 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.22" length = "0.15"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="base_board" type="fixed">
+        <origin xyz="0 0 0.545" rpy="0 0 0" />        
+        <parent link="base_link"/>
+        <child link="board" />
+    </joint>
+
+    <link name="board">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.54 0.86 0.03"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.54 0.86 0.03"/>
+            </geometry>        
+        </collision>
+    </link> 
+    
+    <joint name="board_bar_leftfront" type="fixed">
+        <origin xyz="0.755 0.415 0.11" rpy="0 0 0" />        
+        <parent link="board"/>
+        <child link="bar_leftfront" />
+    </joint>
+
+    <link name="bar_leftfront">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="board_bar_leftback" type="fixed">
+        <origin xyz="-0.755 0.415 0.11" rpy="0 0 0" />        
+        <parent link="board"/>
+        <child link="bar_leftback" />
+    </joint>
+
+    <link name="bar_leftback">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="board_bar_rightfront" type="fixed">
+        <origin xyz="0.755 -0.415 0.11" rpy="0 0 0" />        
+        <parent link="board"/>
+        <child link="bar_rightfront" />
+    </joint>
+
+    <link name="bar_rightfront">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="board_bar_rightback" type="fixed">
+        <origin xyz="-0.755 -0.415 0.11" rpy="0 0 0" />        
+        <parent link="board"/>
+        <child link="bar_rightback" />
+    </joint>
+
+    <link name="bar_rightback">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.22"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_leftfront_bar_leftfront_tilt" type="fixed">
+        <origin xyz="-0.111 0 0.309" rpy="0 -0.5 0" />        
+        <parent link="bar_leftfront"/>
+        <child link="bar_leftfront_tilt" />
+    </joint>
+
+    <link name="bar_leftfront_tilt">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_leftfront_tilt_camerabar" type="fixed">
+        <origin xyz="0 -0.41 0" rpy="0 0 0" />        
+        <parent link="bar_leftfront_tilt"/>
+        <child link="camerabar" />
+    </joint>
+
+    <link name="camerabar">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.83 0.03"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+
+    <joint name="bar_front_high_camera" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.5708 0 0" />        
+        <parent link="bar_front_high"/>
+        <child link="left_camera" />
+    </joint>
+
+    <link name="left_camera">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.07 0.07 0.07"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+
+    <joint name="bar_leftback_bar_leftback_tilt" type="fixed">
+        <origin xyz="0.111 0 0.309" rpy="0 0.5 0" />        
+        <parent link="bar_leftback"/>
+        <child link="bar_leftback_tilt" />
+    </joint>
+
+    <link name="bar_leftback_tilt">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_rightfront_bar_rightfront_tilt" type="fixed">
+        <origin xyz="-0.111 0 0.309" rpy="0 -0.5 0" />        
+        <parent link="bar_rightfront"/>
+        <child link="bar_rightfront_tilt" />
+    </joint>
+
+    <link name="bar_rightfront_tilt">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_rightback_bar_rightback_tilt" type="fixed">
+        <origin xyz="0.111 0 0.309" rpy="0 0.5 0" />        
+        <parent link="bar_rightback"/>
+        <child link="bar_rightback_tilt" />
+    </joint>
+
+    <link name="bar_rightback_tilt">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.47"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>        
+        </collision>
+    </link> 
+
+    <joint name="bar_leftfront_bar_front" type="fixed">
+        <origin xyz="0 -0.42 0.11" rpy="1.5708 0 0" />        
+        <parent link="bar_leftfront"/>
+        <child link="bar_front" />
+    </joint>
+
+    <link name="bar_front">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="camerabar_laser" type="fixed">
+        <origin xyz="0 0 0.04" rpy="0 0.5 0" />        
+        <parent link="camerabar"/>
+        <child link="laser" />
+    </joint>
+
+    <link name="laser">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.035"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.035"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_leftfront_bar_front_high" type="fixed">
+        <origin xyz="-0.225 -0.42 0.51" rpy="1.5708 0 0" />        
+        <parent link="bar_leftfront"/>
+        <child link="bar_front_high" />
+    </joint>
+
+    <link name="bar_front_high">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_leftback_bar_back" type="fixed">
+        <origin xyz="0 -0.42 0.11" rpy="1.5708 0 0" />        
+        <parent link="bar_leftback"/>
+        <child link="bar_back" />
+    </joint>
+
+    <link name="bar_back">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.85"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_leftback_bar_back_high" type="fixed">
+        <origin xyz="0.225 -0.415 0.51" rpy="1.5708 0 0" />        
+        <parent link="bar_leftback"/>
+        <child link="bar_back_high" />
+    </joint>
+
+    <link name="bar_back_high">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.86"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.03 0.03 0.86"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_front_high_bar_top_left" type="fixed">
+        <origin xyz="-0.52 0 0.4095" rpy="0 0 0" />        
+        <parent link="bar_front_high"/>
+        <child link="bar_top_left" />
+    </joint>
+
+    <link name="bar_top_left">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.06 0.03 0.03"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.06 0.03 0.03"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+    <joint name="bar_front_high_bar_top_right" type="fixed">
+        <origin xyz="-0.52 0 -0.42" rpy="0 0 0" />        
+        <parent link="bar_front_high"/>
+        <child link="bar_top_right" />
+    </joint>
+
+    <link name="bar_top_right">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.071 0.03 0.03"/>
+            </geometry>
+            <material name="darkgrey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="1.071 0.03 0.03"/>
+            </geometry>        
+        </collision>
+    </link> 
+
+</robot>

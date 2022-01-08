@@ -1,0 +1,20 @@
+# 地图源，1：话题/2：文件/3：空地图
+map_src: 3
+
+# 若地图源为话题，需指定话题名
+map_topic: /static_map
+
+# 若地图源为文件，需指定文件目录及地图参数
+map_dir: maps/png_maps/obstacles.png
+size_x: 708
+size_y: 708
+resolution: 0.14124294
+origin_x: -50
+origin_y: -50
+
+# 若地图源为空地图，需指定地图参数
+size_x_empty: 10000
+size_y_empty: 10000
+resolution_empty: 0.14
+origin_x_empty: -200
+origin_y_empty: -200
