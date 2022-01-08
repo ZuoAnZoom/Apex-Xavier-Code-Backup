@@ -14,3 +14,4 @@ Apex Xavier 4.4-1.1.0 小车相关代码和脚本备份
 - `robotcar_ws` 存放小车的主要代码
 - `ws_livox` 存放 Livox mid-70 激光雷达的功能包
 - `scripts` 存放小车主要的一些脚本
+- `catkin_ws2` 用于解决车道线检测算法的一些 runtime 问题单独设置的一个工作空间
